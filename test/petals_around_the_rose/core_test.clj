@@ -2,6 +2,6 @@
   (:use clojure.test
         petals-around-the-rose.core))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest rolls-the-dice
+  (testing "Returns 5 dices"
+    (is (= 5 (count (roll-dices))))))

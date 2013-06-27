@@ -1,6 +1,8 @@
 (ns petals-around-the-rose.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn roll-dices 
+  []
+  (take 5 
+    (for [x (range 5)] 
+      (+ 1 (rand-int 5)))))
+
