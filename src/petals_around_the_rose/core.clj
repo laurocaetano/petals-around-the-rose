@@ -8,5 +8,8 @@
 
 (defn guess-score
   [guessed-value dices]
-  "Correct")
+  (let [answer (apply + dices)]
+    (if (= guessed-value answer)
+      "Correct"
+      (format "The correct score is %d." answer))))
 
