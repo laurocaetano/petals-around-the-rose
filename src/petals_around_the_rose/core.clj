@@ -12,4 +12,3 @@
     (if (= guessed-value answer)
       "Correct"
       (format "The correct score is %d." answer))))
-
