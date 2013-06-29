@@ -8,8 +8,14 @@
 
 (deftest correct-guess-returns-correct
   (testing "Returns 'Correct' when the guess is correct."
-    (is (= "Correct" (guess-score 5 '(1 1 1 1 1))))))
+    (let [dices (roll-dices) 
+          correct-score (apply + dices)]
+      (is (= "Correct" 
+             (guess-score correct-score dices))))))
 
-(deftest wrong-guess-returns-the-anwser
+(deftest wrong-guess-returns-the-answer
   (testing "Returns the correct result when the guess is wrong"
-    (is (= "The correct score is 5." (guess-score 9 '(1 1 1 1 1))))))
+    (let [dices (roll-dices) 
+          correct-score (apply + dices)]
+      (is (= (format "The correct score is %d." correct-score) 
+             (guess-score (+ 1 correct-score) dices))))))
